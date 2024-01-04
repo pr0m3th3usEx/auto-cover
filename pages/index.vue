@@ -1,11 +1,11 @@
 <script setup lang="ts">
 useSeoMeta({
-    title: 'AI-generated cover letter | AutoCover',
-})
+  title: 'AI-generated cover letter | AutoCover',
+});
 </script>
 
 <template>
-    <div>
-        <p>Test</p>
-    </div>
+  <div>
+    <p>Test</p>
+  </div>
 </template>
