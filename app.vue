@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-screen h-screen bg-smoky-black bg-gradient-to-bl from-keppel from-0.45 to-smoky-black-transparent to-101.58 flex flex-col"
+    class="flex h-screen w-screen flex-col bg-smoky-black bg-gradient-to-bl from-keppel from-0.45 to-smoky-black-transparent to-101.58"
   >
     <Nav />
     <NuxtPage class="flex-grow" />
@@ -9,11 +9,11 @@
 
 <style>
 * {
-  @apply font-red-hat m-0 p-0 box-border;
+  @apply m-0 box-border p-0 font-red-hat;
 }
 
 .button {
-  @apply px-6 py-4 rounded border text-white transition-colors;
+  @apply rounded border px-6 py-4 text-white transition-colors;
 }
 
 .button-primary {

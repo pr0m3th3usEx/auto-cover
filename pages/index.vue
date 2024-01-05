@@ -5,14 +5,17 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="w-full px-8 relative">
-    <div class="flex flex-col gap-16 items-start absolute bottom-1/2 translate-y-1/2">
+  <div class="relative w-full px-8">
+    <div class="absolute bottom-1/2 flex translate-y-1/2 flex-col items-start gap-16">
       <div>
-        <h2 class="landing-title w-full lg:max-w-screen-md landing-animation opacity-0">
+        <h2 class="landing-title landing-animation w-full opacity-0 lg:max-w-screen-md">
           You virtual assistant to create your cover letter
         </h2>
       </div>
-      <button class="button button-primary landing-animation landing-animation-delay-cta opacity-0">
+      <button
+        class="button button-primary landing-animation landing-animation-delay-cta opacity-0"
+        @click="navigateTo('/generate')"
+      >
         Create my cover letter
       </button>
     </div>
@@ -21,7 +24,7 @@ useSeoMeta({
 
 <style scoped>
 .landing-title {
-  @apply text-white text-4xl lg:text-6xl;
+  @apply text-4xl text-white lg:text-6xl;
 }
 
 .landing-animation {
