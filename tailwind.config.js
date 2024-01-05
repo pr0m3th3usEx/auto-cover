@@ -41,6 +41,21 @@ export default {
         0.45: '-0.45%',
         101.58: '101.58%',
       },
+      keyframes: {
+        fadeTranslation: {
+          '0%': {
+            transform: 'translateX(250px)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0px)',
+            opacity: '1',
+          },
+        },
+      },
+      animation: {
+        fadeTranslation: 'fadeTranslation 650ms ease-in',
+      },
     },
   },
   plugins: [],
