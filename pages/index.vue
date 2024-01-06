@@ -14,7 +14,7 @@ useSeoMeta({
       </div>
       <button
         class="button button-primary landing-animation landing-animation-delay-cta opacity-0"
-        @click="navigateTo('/generate')"
+        @click="navigateTo('/generate/identity')"
       >
         Create my cover letter
       </button>

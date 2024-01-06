@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       'Red Hat Display': true,
     },
   },
+  imports: {
+    dirs: ['./types/*.ts'],
+  },
   typescript: {
     typeCheck: true,
   },

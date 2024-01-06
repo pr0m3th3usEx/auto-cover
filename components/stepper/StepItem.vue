@@ -15,13 +15,11 @@ const props = defineProps<{
   index: number;
   active?: boolean;
   first?: boolean;
-  last?: boolean;
   isLoading?: string;
 }>();
 
 const progressClassNames = ref({
   first: props.first ?? false,
-  last: props.last ?? false,
   active: props.active ?? false,
 });
 </script>
