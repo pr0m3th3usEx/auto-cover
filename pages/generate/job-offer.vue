@@ -1,7 +1,7 @@
 <template>
-  <div><p>Test</p></div>
+  <NuxtLayout name="generation" title="Job offer" subtitle="Test">
+    <div class="flex w-full max-w-6xl flex-col items-start">
+      <input name="Test" placeholder="Test" class="text-input" />
+    </div>
+  </NuxtLayout>
 </template>
-
-<script lang="ts" setup></script>
-
-<style></style>
