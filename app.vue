@@ -19,12 +19,21 @@
 .button-primary {
   @apply border-pine-green bg-pine-green;
   @apply hover:border-castleton-green hover:bg-castleton-green;
-  @apply focus:border-dark-green focus:bg-dark-green;
 }
 
 .button-primary:disabled {
   @apply opacity-50;
   @apply hover:border-pine-green hover:bg-pine-green;
+}
+
+.button-secondary {
+  @apply border-blue-950 bg-blue-950;
+  @apply hover:border-yankees-blue hover:bg-yankees-blue;
+}
+
+.button-secondary:disabled {
+  @apply opacity-50;
+  @apply hover:border-blue-950 hover:bg-blue-950;
 }
 
 .button-outline {
@@ -34,5 +43,10 @@
 .button-outline:disabled {
   @apply opacity-50;
   @apply hover:bg-transparent;
+}
+
+.text-input {
+  @apply bg-yankees-blue text-base text-white transition-colors;
+  @apply w-full max-w-md rounded px-3 py-4;
 }
 </style>
