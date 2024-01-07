@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex h-screen w-screen flex-col bg-smoky-black bg-gradient-to-bl from-keppel from-0.45 to-smoky-black-transparent to-101.58"
+    class="flex min-h-screen w-screen flex-col bg-smoky-black bg-gradient-to-bl from-keppel from-0.45 to-smoky-black-transparent to-101.58 pb-12"
   >
     <Nav />
     <NuxtPage class="flex-grow" />
