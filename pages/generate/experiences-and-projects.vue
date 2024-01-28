@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="generation" title="Work experience & projects" subtitle="Test">
+  <NuxtLayout name="generation" title="Work experience & projects" subtitle="Test" :step-index="3">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
       <div class="flex w-full flex-col gap-3">
         <div class="grid w-full grid-cols-2 gap-3">

@@ -1,21 +1,48 @@
 <template>
-  <NuxtLayout name="generation" title="Who are you ?" subtitle="Test">
+  <NuxtLayout name="generation" title="Who are you ?" subtitle="Test" :step-index="0">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
-      <div class="grid w-full grid-cols-2 gap-3">
-        <input name="first_name" placeholder="First name" class="text-input w-full !max-w-full" />
-        <input name="last_name" placeholder="Last name" class="text-input w-full !max-w-full" />
-        <input name="email" placeholder="E-mail address" class="text-input !max-w-full" />
-        <input name="phone" placeholder="Phone number" class="text-input !max-w-full" />
-        <input name="city" placeholder="City" class="text-input !max-w-full" />
-        <input name="postal_code" placeholder="Postal code" class="text-input !max-w-full" />
-      </div>
-
-      <BottomBar next @next="onNext" @previous="onPrev" />
+      <FormKit
+        id="form"
+        ref="formRef"
+        type="form"
+        form-class="grid w-full grid-cols-2 gap-3"
+        :actions="false"
+        :incomplete-message="false"
+        @submit="submitHandler"
+      >
+        <FormKit type="text" name="firstName" placeholder="First name" input-class="text-input w-full !max-w-full" />
+        <FormKit type="text" name="lastName" placeholder="Last name" input-class="text-input w-full !max-w-full" />
+        <FormKit
+          type="text"
+          placeholder="E-mail (Required)"
+          validation="required|email"
+          :validation-messages="{
+            required: 'E-mail address required.',
+          }"
+          input-class="text-input w-full !max-w-full"
+        />
+        <FormKit type="text" name="phone" placeholder="Phone number" input-class="text-input w-full !max-w-full" />
+        <FormKit type="text" name="city" placeholder="City" input-class="text-input w-full !max-w-full" />
+        <FormKit type="text" name="postalCode" placeholder="Postal code" input-class="text-input w-full !max-w-full" />
+      </FormKit>
+      <BottomBar next @next="onNext" />
     </div>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-const onNext = () => console.log('NEXT');
-const onPrev = () => console.log('PREVIOUS');
+import type { IdentityForm } from '~/types/doc-gen';
+
+const formRef = ref<HTMLFormElement>();
+const onNext = () => {
+  const node = formRef.value?.node;
+
+  node?.submit();
+};
+
+const submitHandler = (data: IdentityForm) => {
+  console.log(data);
+
+  navigateTo({ path: '/generate/skills' });
+};
 </script>

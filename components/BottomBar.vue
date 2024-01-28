@@ -3,6 +3,7 @@
     <button v-if="previous" class="button button-secondary" @click="$emit('previous')">
       {{ prevBtnText ?? 'Previous' }}
     </button>
+    <div v-if="!previous"></div>
     <button v-if="next" class="button button-primary" @click="$emit('next')">
       {{ nextBtnText ?? 'Next' }}
     </button>

@@ -14,6 +14,7 @@
 defineProps<{
   title: string;
   subtitle: string;
+  stepIndex: number;
 }>();
 
 const steps = computed<StepperStep[]>(() => [
@@ -42,6 +43,4 @@ const steps = computed<StepperStep[]>(() => [
     name: 'Interest',
   },
 ]);
-
-const stepIndex = ref(0);
 </script>

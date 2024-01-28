@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="generation" title="Job offer" subtitle="Test">
+  <NuxtLayout name="generation" title="Job offer" subtitle="Test" :step-index="4">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
       <div class="grid w-full grid-cols-2 gap-3">
         <input name="company_name" placeholder="Company" class="text-input w-full !max-w-full" />

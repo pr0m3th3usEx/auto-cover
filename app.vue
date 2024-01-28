@@ -49,4 +49,11 @@
   @apply bg-yankees-blue text-base text-white transition-colors;
   @apply w-full max-w-md rounded px-3 py-4;
 }
+
+.formkit-messages {
+  @apply py-2;
+}
+.formkit-message {
+  @apply text-red-400;
+}
 </style>

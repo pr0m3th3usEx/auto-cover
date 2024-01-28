@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="generation" title="Interest" subtitle="Test">
+  <NuxtLayout name="generation" title="Interest" subtitle="Test" :step-index="5">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
       <textarea
         name="job_interests"

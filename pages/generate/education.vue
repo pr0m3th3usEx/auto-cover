@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="generation" title="Education" subtitle="Test">
+  <NuxtLayout name="generation" title="Education" subtitle="Test" :step-index="2">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
       <div class="grid w-full grid-cols-2 gap-3">
         <input name="school_name" placeholder="School name" class="text-input w-full !max-w-full" />
@@ -22,5 +22,5 @@
 
 <script setup lang="ts">
 const onNext = () => console.log('NEXT');
-const onPrev = () => console.log('PREVIOUS');
+const onPrev = () => navigateTo({ path: '/generate/skills' });
 </script>
