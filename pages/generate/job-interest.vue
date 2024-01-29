@@ -1,18 +1,43 @@
 <template>
   <NuxtLayout name="generation" title="Interest" subtitle="Test" :step-index="5">
-    <div class="flex w-full max-w-6xl flex-col items-start gap-8">
-      <textarea
-        name="job_interests"
-        placeholder="Why do you want to work for this company ?"
-        class="text-input col-span-2 !max-w-full"
+    <FormKit
+      id="form"
+      ref="formRef"
+      type="form"
+      :actions="false"
+      form-class="flex w-full max-w-6xl flex-col items-start gap-8"
+      :incomplete-message="false"
+      @submit="submitHandler"
+    >
+      <FormKit
+        type="textarea"
+        name="interests"
+        placeholder="Why do you want to work for this position ?"
+        validation="required"
+        :validation-messages="{
+          required: 'You must explain why you are attracted by this position',
+        }"
+        outer-class="col-span-2 !w-full"
+        input-class="text-input !max-w-full"
         rows="5"
       />
 
-      <BottomBar next next-btn-text="Generate my cover letter" @next="onNext" />
-    </div>
+      <BottomBar previous next next-btn-text="Generate my cover letter" @next="onNext" @previous="onPrev" />
+    </FormKit>
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-const onNext = () => console.log('Generate my cover letter');
+const formRef = ref<HTMLFormElement>();
+
+const onNext = () => {
+  const node = formRef.value?.node;
+
+  node?.submit();
+};
+const onPrev = () => console.log('PREV');
+
+const submitHandler = (data: JobInterestForm) => {
+  console.log(data);
+};
 </script>

@@ -50,7 +50,7 @@ export type ExperienceForm = {
   experiences: Experience<Work | Project>[];
 };
 
-export type JobOfferFrom = {
+export type JobOfferForm = {
   companyName: string;
   companyDescription: string;
   jobTitle: string;
