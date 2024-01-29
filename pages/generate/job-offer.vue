@@ -85,9 +85,10 @@ const onNext = () => {
 
   node?.submit();
 };
-const onPrev = () => console.log('PREVIOUS');
+const onPrev = () => navigateTo('/generate/experiences-and-projects');
 
 const submitHandler = (data: JobOfferForm) => {
   console.log(data);
+  navigateTo('/generate/job-interest');
 };
 </script>

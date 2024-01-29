@@ -35,5 +35,5 @@
 
 <script setup lang="ts">
 const onNext = () => console.log('NEXT');
-const onPrev = () => console.log('PREVIOUS');
+const onPrev = () => navigateTo('/generate/education');
 </script>

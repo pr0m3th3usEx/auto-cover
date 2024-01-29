@@ -35,7 +35,7 @@ const onNext = () => {
 
   node?.submit();
 };
-const onPrev = () => console.log('PREV');
+const onPrev = () => navigateTo('/generate/job-offer');
 
 const submitHandler = (data: JobInterestForm) => {
   console.log(data);

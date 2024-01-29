@@ -67,6 +67,6 @@ export type DocGenerationContext = {
   skills: SkillsForm;
   education: EducationForm;
   experience: ExperienceForm;
-  jobOffer: JobOfferFrom;
+  jobOffer: JobOfferForm;
   interest: JobInterestForm;
 };
