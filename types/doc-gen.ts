@@ -20,6 +20,8 @@ export type Training = {
   skillsRelated: string[];
 };
 
+export type TrainingKeys = keyof Training;
+
 export type EducationForm = {
   trainings: Training[];
 };

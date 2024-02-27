@@ -46,7 +46,7 @@
 }
 
 .text-input {
-  @apply bg-yankees-blue text-base text-white transition-colors;
+  @apply !bg-yankees-blue !text-base !text-white !transition-colors;
   @apply w-full max-w-md rounded px-3 py-4;
 }
 
@@ -57,3 +57,5 @@
   @apply text-red-400;
 }
 </style>
+
+<style src="@vueform/multiselect/themes/default.css"></style>

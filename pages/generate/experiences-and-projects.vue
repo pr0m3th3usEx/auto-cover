@@ -21,7 +21,16 @@
             <input name="end_date" placeholder="End date" class="text-input !max-w-full" />
           </div>
         </div>
-        <input name="skills_related" placeholder="Skills related" class="text-input !max-w-full" />
+        <Multiselect
+          v-model="value"
+          mode="tags"
+          name="skills_related"
+          :options="options"
+          :searchable="true"
+          class="text-input !max-w-full !border-0 !px-0 !py-2.5"
+          placeholder="Skills related"
+          :classes="$multiselectClasses as Record<string, string>"
+        />
       </div>
       <button class="button button-outline flex items-center gap-1">
         <Icon name="uil:plus" />
@@ -34,6 +43,10 @@
 </template>
 
 <script setup lang="ts">
+import Multiselect from '@vueform/multiselect';
+
+const { $multiselectClasses } = useNuxtApp();
+
 const onNext = () => console.log('NEXT');
 const onPrev = () => navigateTo('/generate/education');
 </script>
