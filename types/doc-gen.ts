@@ -26,15 +26,10 @@ export type EducationForm = {
   trainings: Training[];
 };
 
-type Experience<T> = {
-  type: 'work' | 'project';
-  data: T;
-};
-
 type Project = {
   type: 'project';
-  name: string;
-  description: string;
+  projectName: string;
+  projectDescription: string;
   skillsRelated: string[];
 };
 
@@ -48,8 +43,14 @@ type Work = {
   skillsRelated: string[];
 };
 
+export type Experience = Project | Work;
+
+export type ExperienceKeys = keyof Experience;
+export type ProjectKeys = keyof Project;
+export type WorkKeys = keyof Work;
+
 export type ExperienceForm = {
-  experiences: Experience<Work | Project>[];
+  experiences: Experience[];
 };
 
 export type JobOfferForm = {

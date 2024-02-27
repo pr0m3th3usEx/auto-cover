@@ -43,9 +43,9 @@ const onNext = () => {
 
 const onPrev = () => navigateTo({ path: '/generate/skills' });
 
-const submitHandler = (data: SkillsForm) => {
+const submitHandler = (data: EducationForm) => {
   console.log(data);
 
-  // navigateTo({ path: '/generate/education' });
+  // navigateTo({ path: '/generate/experiences-and-projects' });
 };
 </script>

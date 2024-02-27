@@ -1,41 +1,17 @@
 <template>
   <NuxtLayout name="generation" title="Work experience & projects" subtitle="Test" :step-index="3">
     <div class="flex w-full max-w-6xl flex-col items-start gap-8">
-      <div class="flex w-full flex-col gap-3">
-        <div class="grid w-full grid-cols-2 gap-3">
-          <div class="col-span-2 flex flex-row gap-8">
-            <div class="col-span-2 flex gap-1">
-              <input type="radio" name="exp_type" />
-              <label for="exp_type" class="text-white">Work experience</label>
-            </div>
-            <div class="col-span-2 flex gap-1">
-              <input type="radio" name="exp_type" />
-              <label for="exp_type" class="text-white">Project</label>
-            </div>
-          </div>
-          <input name="job_title" placeholder="Job title" class="text-input w-full !max-w-full" />
-          <input name="contract_type" placeholder="Contract type" class="text-input !max-w-full" />
-          <input name="company" placeholder="Company" class="text-input !max-w-full" />
-          <div class="grid grid-cols-2 gap-3">
-            <input name="start_date" placeholder="Start date" class="text-input w-full !max-w-full" />
-            <input name="end_date" placeholder="End date" class="text-input !max-w-full" />
-          </div>
-        </div>
-        <Multiselect
-          v-model="value"
-          mode="tags"
-          name="skills_related"
-          :options="options"
-          :searchable="true"
-          class="text-input !max-w-full !border-0 !px-0 !py-2.5"
-          placeholder="Skills related"
-          :classes="$multiselectClasses as Record<string, string>"
-        />
-      </div>
-      <button class="button button-outline flex items-center gap-1">
-        <Icon name="uil:plus" />
-        Add an experience / project
-      </button>
+      <FormKit
+        id="form"
+        ref="formRef"
+        type="form"
+        form-class="w-full"
+        :actions="false"
+        :incomplete-message="false"
+        @submit="submitHandler"
+      >
+        <FormKit name="experiences" :type="experienceForm" outer-class="w-full" input-class="!w-full" :value="[{}]" />
+      </FormKit>
 
       <BottomBar previous next @next="onNext" @previous="onPrev" />
     </div>
@@ -43,10 +19,33 @@
 </template>
 
 <script setup lang="ts">
-import Multiselect from '@vueform/multiselect';
+import ExperienceInput from '~/components/inputs/ExperienceInput.vue';
+import RepeatedForm from '~/components/form/RepeatedForm.vue';
 
-const { $multiselectClasses } = useNuxtApp();
+const formRef = ref<HTMLFormElement>();
 
-const onNext = () => console.log('NEXT');
+const experienceForm = createInput({
+  type: 'input',
+  $cmp: RepeatedForm,
+  props: {
+    component: ExperienceInput,
+    context: '$node.context',
+    addBtnText: 'Add more',
+    itemName: 'Experience',
+  },
+  features: [],
+});
+
+const onNext = () => {
+  const node = formRef.value?.node;
+  node?.submit();
+};
+
 const onPrev = () => navigateTo('/generate/education');
+
+const submitHandler = (data: ExperienceForm) => {
+  console.log(data);
+
+  navigateTo({ path: '/generate/job-offer' });
+};
 </script>

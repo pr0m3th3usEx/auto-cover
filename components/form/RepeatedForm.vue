@@ -50,7 +50,6 @@ const removeItem = (index: number) => {
 const setItem = (index: number, data: any) => {
   if (props.context && (props.context._value as []).length > index) {
     const copy = (props.context._value as any[]).slice();
-
     copy[index] = data;
     props.context.node.input(copy);
   }
