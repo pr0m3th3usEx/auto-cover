@@ -46,6 +46,6 @@ const onPrev = () => navigateTo({ path: '/generate/skills' });
 const submitHandler = (data: EducationForm) => {
   console.log(data);
 
-  // navigateTo({ path: '/generate/experiences-and-projects' });
+  navigateTo({ path: '/generate/experiences-and-projects' });
 };
 </script>

@@ -14,7 +14,7 @@
       <component :is="props.component" :data="item" @change="(data: any) => setItem(index, data)"></component>
     </div>
 
-    <button class="button button-outline flex items-center gap-1" @click="addItem">
+    <button type="button" class="button button-outline flex items-center gap-1" @click="addItem">
       <Icon name="uil:plus" />
       {{ props.addBtnText }}
     </button>

@@ -10,7 +10,13 @@
         :incomplete-message="false"
         @submit="submitHandler"
       >
-        <FormKit name="experiences" :type="experienceForm" outer-class="w-full" input-class="!w-full" :value="[{}]" />
+        <FormKit
+          name="experiences"
+          :type="experienceForm"
+          outer-class="w-full"
+          input-class="!w-full"
+          :value="[{ type: 'work' }]"
+        />
       </FormKit>
 
       <BottomBar previous next @next="onNext" @previous="onPrev" />
