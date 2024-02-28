@@ -53,7 +53,6 @@ const { $multiselectClasses } = useNuxtApp();
 const options = computed(() => ['Test', 'Test1', 'Test2']);
 
 const handleChange = (fieldName: TrainingKeys, value: any) => {
-  console.log(value);
   emit('change', {
     ...props.data,
     [fieldName]: value,

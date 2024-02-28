@@ -4,21 +4,25 @@
       <div class="col-span-2 flex flex-row gap-8">
         <div class="col-span-2 flex gap-1">
           <input
+            id="workOption"
             type="radio"
             name="expType"
+            value="works"
             :checked="props.data.type === 'work'"
             @change="() => handleChange('type', 'work')"
           />
-          <label for="exp_type" class="text-white">Work experience</label>
+          <label for="workOption" class="text-white">Work experience</label>
         </div>
         <div class="col-span-2 flex gap-1">
           <input
+            id="projectOption"
             type="radio"
+            value="project"
             name="expType"
             :checked="props.data.type === 'project'"
             @change="() => handleChange('type', 'project')"
           />
-          <label for="exp_type" class="text-white">Project</label>
+          <label for="projectOption" class="text-white">Project</label>
         </div>
       </div>
       <template v-if="props.data.type === 'work'">
@@ -99,7 +103,6 @@ const { $multiselectClasses } = useNuxtApp();
 const options = computed(() => ['Test', 'Test1', 'Test2']);
 
 onMounted(() => {
-  console.log(props.data);
   if (!props.data.type) handleChange('type', 'work');
 });
 
