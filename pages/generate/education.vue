@@ -10,7 +10,7 @@
         :incomplete-message="false"
         @submit="submitHandler"
       >
-        <FormKit name="education" :type="educationForm" outer-class="w-full" input-class="!w-full" :value="[{}]" />
+        <FormKit name="education" :type="educationForm" outer-class="w-full" input-class="!w-full" />
       </FormKit>
 
       <BottomBar previous next @next="onNext" @previous="onPrev" />

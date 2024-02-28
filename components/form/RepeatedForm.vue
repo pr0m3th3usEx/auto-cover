@@ -30,8 +30,7 @@ const props = defineProps({
 });
 
 /* Force rerender when mutations of elements  */
-
-const items = computed(() => (props.context?._value ?? []) as any[]);
+const items = computed(() => (props.context?._value ?? [{}]) as any[]);
 
 /* Utility functions */
 
@@ -48,8 +47,8 @@ const removeItem = (index: number) => {
 };
 
 const setItem = (index: number, data: any) => {
-  if (props.context && (props.context._value as []).length > index) {
-    const copy = (props.context._value as any[]).slice();
+  if (props.context && items.value.length > index) {
+    const copy = (items.value as any[]).slice();
     copy[index] = data;
     props.context.node.input(copy);
   }

@@ -99,6 +99,7 @@ const { $multiselectClasses } = useNuxtApp();
 const options = computed(() => ['Test', 'Test1', 'Test2']);
 
 onMounted(() => {
+  console.log(props.data);
   if (!props.data.type) handleChange('type', 'work');
 });
 
